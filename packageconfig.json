@@ -1,0 +1,11 @@
+﻿{
+
+    "gemName": "cloudmersive-phishing-detection-api-client",
+    "gemLicense": "Apache 2.0",
+    "gemVersion": "2.2.3",
+    "gemHomepage": "https://www.cloudmersive.com/phishing-api",
+    "gemSummary": "Scan URLs for phishing.",
+    "gemDescription": "Phishing Detection API lets you scan websites for phishing attacks using AI.",
+    "gemAuthor": "Cloudmersive"
+
+}
