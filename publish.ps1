@@ -1,1 +1,1 @@
-& gem push .\client\cloudmersive-phishing-detection-api-client-2.2.0.gem
+& gem push .\client\cloudmersive-dlp-api-client-2.2.0.gem
