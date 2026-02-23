@@ -1,11 +1,11 @@
 ﻿{
 
-    "gemName": "cloudmersive-phishing-detection-api-client",
+    "gemName": "cloudmersive-dlp-api-client",
     "gemLicense": "Apache 2.0",
-    "gemVersion": "2.2.3",
-    "gemHomepage": "https://www.cloudmersive.com/phishing-api",
-    "gemSummary": "Scan URLs for phishing.",
-    "gemDescription": "Phishing Detection API lets you scan websites for phishing attacks using AI.",
+    "gemVersion": "2.2.0",
+    "gemHomepage": "https://cloudmersive.com/dlp-data-loss-prevention-api",
+    "gemSummary": "Scan input for PII.",
+    "gemDescription": "Cloudmersive Data Loss Prevention allows you to scan input for Personally Identifiable Information (PII), Personal Health Information (PHI), Personal Financial Information and other types of sensitive data.  Advanced AI is used to both detect and redact with next-generation accuracy.",
     "gemAuthor": "Cloudmersive"
 
 }

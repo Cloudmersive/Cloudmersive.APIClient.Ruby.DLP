@@ -1,0 +1,43 @@
+# CloudmersiveDlpApiClient::DlpAdvancedDetectionRequest
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**input_text** | **String** | Text to scan for PII and sensitive data. | [optional] 
+**allow_email_address** | **BOOLEAN** | Set to true to allow email addresses in the input text and not flag them as PII. | [optional] 
+**allow_phone_number** | **BOOLEAN** | Set to true to allow phone numbers in the input text and not flag them as PII. | [optional] 
+**allow_street_address** | **BOOLEAN** | Set to true to allow street addresses in the input text and not flag them as PII. | [optional] 
+**allow_person_name** | **BOOLEAN** | Set to true to allow person names in the input text and not flag them as PII. | [optional] 
+**allow_birth_date** | **BOOLEAN** | Set to true to allow birth dates in the input text and not flag them as PII. | [optional] 
+**allow_passport_number** | **BOOLEAN** | Set to true to allow passport numbers in the input text and not flag them as PII. | [optional] 
+**allow_drivers_license** | **BOOLEAN** | Set to true to allow drivers license numbers in the input text and not flag them as PII. | [optional] 
+**allow_social_security_number** | **BOOLEAN** | Set to true to allow social security numbers in the input text and not flag them as PII. | [optional] 
+**allow_taxpayer_id** | **BOOLEAN** | Set to true to allow taxpayer IDs in the input text and not flag them as PII. | [optional] 
+**allow_credit_card_number** | **BOOLEAN** | Set to true to allow credit card numbers in the input text and not flag them as PII. | [optional] 
+**allow_credit_card_expiration_date** | **BOOLEAN** | Set to true to allow credit card expiration dates in the input text and not flag them as PII. | [optional] 
+**allow_credit_card_verification_code** | **BOOLEAN** | Set to true to allow credit card verification codes in the input text and not flag them as PII. | [optional] 
+**allow_bank_account_number** | **BOOLEAN** | Set to true to allow bank account numbers in the input text and not flag them as PII. | [optional] 
+**allow_iban** | **BOOLEAN** | Set to true to allow IBANs in the input text and not flag them as PII. | [optional] 
+**allow_health_insurance_number** | **BOOLEAN** | Set to true to allow health insurance numbers in the input text and not flag them as PII. | [optional] 
+**allow_bearer_token** | **BOOLEAN** | Set to true to allow bearer tokens in the input text and not flag them as PII. | [optional] 
+**allow_http_cookie** | **BOOLEAN** | Set to true to allow HTTP cookies in the input text and not flag them as PII. | [optional] 
+**allow_private_keys** | **BOOLEAN** | Set to true to allow private keys in the input text and not flag them as PII. | [optional] 
+**allow_credentials** | **BOOLEAN** | Set to true to allow credentials (usernames/passwords) in the input text and not flag them as PII. | [optional] 
+**allow_deep_web_urls** | **BOOLEAN** | Set to true to allow deep web URLs (.onion) in the input text and not flag them as PII. | [optional] 
+**allow_source_code** | **BOOLEAN** | Set to true to allow source code in the input text and not flag it as sensitive data. | [optional] 
+**allow_ip_address** | **BOOLEAN** | Set to true to allow IP addresses in the input text and not flag them as PII. | [optional] 
+**allow_mac_address** | **BOOLEAN** | Set to true to allow MAC addresses in the input text and not flag them as PII. | [optional] 
+**allow_health_insurance_member_id** | **BOOLEAN** | Set to true to allow health insurance member IDs in the input text and not flag them as PHI. | [optional] 
+**allow_health_injury_or_disease** | **BOOLEAN** | Set to true to allow references to injuries or diseases in the input text and not flag them as PHI. | [optional] 
+**allow_health_type_of_treatment** | **BOOLEAN** | Set to true to allow references to types of medical treatment in the input text and not flag them as PHI. | [optional] 
+**allow_health_date_and_time_of_treatment** | **BOOLEAN** | Set to true to allow dates and times of medical treatment in the input text and not flag them as PHI. | [optional] 
+**allow_health_plan_beneficiary_number** | **BOOLEAN** | Set to true to allow health plan beneficiary numbers in the input text and not flag them as PHI. | [optional] 
+**allow_health_payments_made_for_treatment** | **BOOLEAN** | Set to true to allow payments made for medical treatment in the input text and not flag them as PHI. | [optional] 
+**allow_vehicle_id** | **BOOLEAN** | Set to true to allow vehicle identifiers (e.g. license plates, VINs) in the input text and not flag them as PII. | [optional] 
+**allow_device_id** | **BOOLEAN** | Set to true to allow device identifiers (e.g. serial numbers, IMEIs, MAC-level device IDs) in the input text and not flag them as PII. | [optional] 
+**allow_names_of_relatives** | **BOOLEAN** | Set to true to allow names of relatives in the input text and not flag them as PII. | [optional] 
+**allow_health_universal_record_locator** | **BOOLEAN** | Set to true to allow health universal record locators (URLs) in the input text and not flag them as PHI. | [optional] 
+**allow_biometrics** | **BOOLEAN** | Set to true to allow biometric data references (e.g. fingerprints, retinal scans, voiceprints) in the input text and not flag them as PII. | [optional] 
+**provide_analysis_rationale** | **BOOLEAN** | Set to true to include a natural language rationale explaining why each detection conclusion was formed. | [optional] 
+
+
