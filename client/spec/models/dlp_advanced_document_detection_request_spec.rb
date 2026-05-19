@@ -68,6 +68,12 @@ describe 'DlpAdvancedDocumentDetectionRequest' do
     end
   end
 
+  describe 'test attribute "allow_city"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "allow_person_name"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -194,6 +200,18 @@ describe 'DlpAdvancedDocumentDetectionRequest' do
     end
   end
 
+  describe 'test attribute "allow_medical_record_number"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "allow_billing_account_number"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   describe 'test attribute "allow_health_injury_or_disease"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -261,6 +279,12 @@ describe 'DlpAdvancedDocumentDetectionRequest' do
   end
 
   describe 'test attribute "provide_analysis_rationale"' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  describe 'test attribute "custom_policy_id"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end

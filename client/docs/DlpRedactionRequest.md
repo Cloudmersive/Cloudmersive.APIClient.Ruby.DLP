@@ -27,6 +27,6 @@ Name | Type | Description | Notes
 **allow_source_code** | **BOOLEAN** | Set to true to allow source code in the input text and not redact it. | [optional] 
 **allow_ip_address** | **BOOLEAN** | Set to true to allow IP addresses in the input text and not redact them. | [optional] 
 **allow_mac_address** | **BOOLEAN** | Set to true to allow MAC addresses in the input text and not redact them. | [optional] 
-**redaction_mode** | **String** | Redaction mode: \&quot;Delete\&quot; to remove PII entirely, or \&quot;ReplaceWithAsterisk\&quot; to replace PII characters with asterisks (*). | [optional] 
+**redaction_mode** | **String** | Redaction mode: \&quot;SemanticTag\&quot; (default) replaces PII with a semantic tag in square brackets (e.g. [PHONE-NUMBER]), \&quot;Delete\&quot; removes PII entirely, or \&quot;ReplaceWithAsterisk\&quot; replaces PII characters with asterisks (*). | [optional] 
 
 

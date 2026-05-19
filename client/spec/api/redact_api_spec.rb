@@ -32,9 +32,33 @@ describe 'RedactApi' do
     end
   end
 
+  # unit tests for redact_audio
+  # Redact User Data in Audio File
+  # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 23 configurable types of user data in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, and redacted segment timestamps.
+  # @param [Hash] opts the optional parameters
+  # @option opts [DlpAudioRedactionRequest] :body Input request
+  # @return [DlpAudioRedactionResponse]
+  describe 'redact_audio test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for redact_audio_advanced
+  # Redact User Data in Audio File (Advanced)
+  # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 34 configurable types of user data including health-related PHI in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, redacted segment timestamps, and optional rationale.
+  # @param [Hash] opts the optional parameters
+  # @option opts [DlpAdvancedAudioRedactionRequest] :body Input request
+  # @return [DlpAdvancedAudioRedactionResponse]
+  describe 'redact_audio_advanced test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for redact_document
   # Redact User Data in Document
-  # Detects and redacts configurable types of user data in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
+  # Detects and redacts configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
   # @param [Hash] opts the optional parameters
   # @option opts [DlpDocumentRedactionRequest] :body Input request
   # @return [DlpDocumentRedactionResponse]
@@ -46,7 +70,7 @@ describe 'RedactApi' do
 
   # unit tests for redact_document_advanced
   # Redact User Data in Document (Advanced)
-  # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
+  # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
   # @param [Hash] opts the optional parameters
   # @option opts [DlpAdvancedDocumentRedactionRequest] :body Input request
   # @return [DlpAdvancedDocumentRedactionResponse]

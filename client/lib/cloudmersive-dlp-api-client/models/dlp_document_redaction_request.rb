@@ -15,13 +15,13 @@ require 'date'
 module CloudmersiveDlpApiClient
   # Request object for DLP document redaction with 23 PII detection types.
   class DlpDocumentRedactionRequest
-    # Document file bytes (PDF, DOCX, PNG, or JPG) to scan for PII and redact.
+    # Document file bytes (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, or WEBP) to scan for PII and redact.
     attr_accessor :input_file
 
     # Optional. Name of the input file including extension, used for format detection. If not provided, format is detected from file contents.
     attr_accessor :file_name
 
-    # Optional. Recognition mode for image processing. Options: null (default), \"Fast\", \"FastPlus\", \"FastMini\".
+    # Optional. Recognition mode for image processing. Options: null (default), \"Normal\", \"Advanced\", \"Fast\", \"FastPlus\", \"FastMini\".
     attr_accessor :recognition_mode
 
     # Redaction mode for PII regions. Options: \"BlackOut\" (default) draws black rectangles over PII rows, \"Blur\" applies Gaussian blur to PII rows, \"BlackOutEntirePage\" blacks out entire dirty pages, \"BlurEntirePage\" blurs entire dirty pages.

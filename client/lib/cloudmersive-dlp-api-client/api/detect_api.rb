@@ -19,8 +19,108 @@ module CloudmersiveDlpApiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Detect User Data in Audio File
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 23 configurable types of user data in the transcript using Advanced AI. Returns the full transcript, token timestamps, and detection results.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAudioDetectionRequest] :body Input request
+    # @return [DlpAudioDetectionResponse]
+    def detect_audio(opts = {})
+      data, _status_code, _headers = detect_audio_with_http_info(opts)
+      data
+    end
+
+    # Detect User Data in Audio File
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 23 configurable types of user data in the transcript using Advanced AI. Returns the full transcript, token timestamps, and detection results.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAudioDetectionRequest] :body Input request
+    # @return [Array<(DlpAudioDetectionResponse, Fixnum, Hash)>] DlpAudioDetectionResponse data, response status code and response headers
+    def detect_audio_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DetectApi.detect_audio ...'
+      end
+      # resource path
+      local_var_path = '/dlp/detect/audio'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DlpAudioDetectionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DetectApi#detect_audio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Detect User Data in Audio File (Advanced)
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 29 configurable types of user data including health-related PHI in the transcript using Advanced AI. Returns the full transcript, token timestamps, detection results, and optional rationale.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAdvancedAudioDetectionRequest] :body Input request
+    # @return [DlpAdvancedAudioDetectionResponse]
+    def detect_audio_advanced(opts = {})
+      data, _status_code, _headers = detect_audio_advanced_with_http_info(opts)
+      data
+    end
+
+    # Detect User Data in Audio File (Advanced)
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 29 configurable types of user data including health-related PHI in the transcript using Advanced AI. Returns the full transcript, token timestamps, detection results, and optional rationale.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAdvancedAudioDetectionRequest] :body Input request
+    # @return [Array<(DlpAdvancedAudioDetectionResponse, Fixnum, Hash)>] DlpAdvancedAudioDetectionResponse data, response status code and response headers
+    def detect_audio_advanced_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DetectApi.detect_audio_advanced ...'
+      end
+      # resource path
+      local_var_path = '/dlp/detect/audio/advanced'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DlpAdvancedAudioDetectionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DetectApi#detect_audio_advanced\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Detect User Data in Document Image
-    # Detects configurable types of user data in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+    # Detects configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpDocumentDetectionRequest] :body Input request
     # @return [DlpDetectionResponse]
@@ -30,7 +130,7 @@ module CloudmersiveDlpApiClient
     end
 
     # Detect User Data in Document Image
-    # Detects configurable types of user data in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+    # Detects configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpDocumentDetectionRequest] :body Input request
     # @return [Array<(DlpDetectionResponse, Fixnum, Hash)>] DlpDetectionResponse data, response status code and response headers
@@ -70,7 +170,7 @@ module CloudmersiveDlpApiClient
       return data, status_code, headers
     end
     # Detect User Data in Document Image (Advanced)
-    # Detects 29 configurable types of user data including health-related PHI in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+    # Detects 29 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpAdvancedDocumentDetectionRequest] :body Input request
     # @return [DlpAdvancedDetectionResponse]
@@ -80,7 +180,7 @@ module CloudmersiveDlpApiClient
     end
 
     # Detect User Data in Document Image (Advanced)
-    # Detects 29 configurable types of user data including health-related PHI in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+    # Detects 29 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpAdvancedDocumentDetectionRequest] :body Input request
     # @return [Array<(DlpAdvancedDetectionResponse, Fixnum, Hash)>] DlpAdvancedDetectionResponse data, response status code and response headers

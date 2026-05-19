@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**input_file** | **String** | Document file bytes (PDF, DOCX, PNG, or JPG) to scan for PII and redact. | [optional] 
+**input_file** | **String** | Document file bytes (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, or WEBP) to scan for PII and redact. | [optional] 
 **file_name** | **String** | Optional. Name of the input file including extension, used for format detection. If not provided, format is detected from file contents. | [optional] 
-**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
+**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Normal\&quot;, \&quot;Advanced\&quot;, \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
 **redaction_mode** | **String** | Redaction mode for PII regions. Options: \&quot;BlackOut\&quot; (default) draws black rectangles over PII rows, \&quot;Blur\&quot; applies Gaussian blur to PII rows, \&quot;BlackOutEntirePage\&quot; blacks out entire dirty pages, \&quot;BlurEntirePage\&quot; blurs entire dirty pages. | [optional] 
 **allow_email_address** | **BOOLEAN** | Set to true to allow email addresses in the document and not redact them. | [optional] 
 **allow_phone_number** | **BOOLEAN** | Set to true to allow phone numbers in the document and not redact them. | [optional] 

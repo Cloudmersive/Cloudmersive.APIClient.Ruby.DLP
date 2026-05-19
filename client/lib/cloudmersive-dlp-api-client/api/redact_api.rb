@@ -19,8 +19,108 @@ module CloudmersiveDlpApiClient
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+    # Redact User Data in Audio File
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 23 configurable types of user data in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, and redacted segment timestamps.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAudioRedactionRequest] :body Input request
+    # @return [DlpAudioRedactionResponse]
+    def redact_audio(opts = {})
+      data, _status_code, _headers = redact_audio_with_http_info(opts)
+      data
+    end
+
+    # Redact User Data in Audio File
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 23 configurable types of user data in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, and redacted segment timestamps.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAudioRedactionRequest] :body Input request
+    # @return [Array<(DlpAudioRedactionResponse, Fixnum, Hash)>] DlpAudioRedactionResponse data, response status code and response headers
+    def redact_audio_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: RedactApi.redact_audio ...'
+      end
+      # resource path
+      local_var_path = '/dlp/redact/audio'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DlpAudioRedactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: RedactApi#redact_audio\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+    # Redact User Data in Audio File (Advanced)
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 34 configurable types of user data including health-related PHI in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, redacted segment timestamps, and optional rationale.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAdvancedAudioRedactionRequest] :body Input request
+    # @return [DlpAdvancedAudioRedactionResponse]
+    def redact_audio_advanced(opts = {})
+      data, _status_code, _headers = redact_audio_advanced_with_http_info(opts)
+      data
+    end
+
+    # Redact User Data in Audio File (Advanced)
+    # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA), detects 34 configurable types of user data including health-related PHI in the transcript, and redacts audio segments containing PII. Returns the redacted audio, redacted transcript, detection results, redacted segment timestamps, and optional rationale.
+    # @param [Hash] opts the optional parameters
+    # @option opts [DlpAdvancedAudioRedactionRequest] :body Input request
+    # @return [Array<(DlpAdvancedAudioRedactionResponse, Fixnum, Hash)>] DlpAdvancedAudioRedactionResponse data, response status code and response headers
+    def redact_audio_advanced_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: RedactApi.redact_audio_advanced ...'
+      end
+      # resource path
+      local_var_path = '/dlp/redact/audio/advanced'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['text/plain', 'application/json', 'text/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'text/json', 'application/*+json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'body'])
+      auth_names = ['Apikey']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'DlpAdvancedAudioRedactionResponse')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: RedactApi#redact_audio_advanced\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
     # Redact User Data in Document
-    # Detects and redacts configurable types of user data in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
+    # Detects and redacts configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpDocumentRedactionRequest] :body Input request
     # @return [DlpDocumentRedactionResponse]
@@ -30,7 +130,7 @@ module CloudmersiveDlpApiClient
     end
 
     # Redact User Data in Document
-    # Detects and redacts configurable types of user data in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
+    # Detects and redacts configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a grid-overlay approach, blurs those regions, and returns a rasterized PDF.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpDocumentRedactionRequest] :body Input request
     # @return [Array<(DlpDocumentRedactionResponse, Fixnum, Hash)>] DlpDocumentRedactionResponse data, response status code and response headers
@@ -70,7 +170,7 @@ module CloudmersiveDlpApiClient
       return data, status_code, headers
     end
     # Redact User Data in Document (Advanced)
-    # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
+    # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpAdvancedDocumentRedactionRequest] :body Input request
     # @return [DlpAdvancedDocumentRedactionResponse]
@@ -80,7 +180,7 @@ module CloudmersiveDlpApiClient
     end
 
     # Redact User Data in Document (Advanced)
-    # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOCX, PNG, JPG) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
+    # Detects and redacts 35 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI. Rasterizes document pages, detects PII regions using a row-overlay approach, redacts those regions, and returns a rasterized PDF.
     # @param [Hash] opts the optional parameters
     # @option opts [DlpAdvancedDocumentRedactionRequest] :body Input request
     # @return [Array<(DlpAdvancedDocumentRedactionResponse, Fixnum, Hash)>] DlpAdvancedDocumentRedactionResponse data, response status code and response headers

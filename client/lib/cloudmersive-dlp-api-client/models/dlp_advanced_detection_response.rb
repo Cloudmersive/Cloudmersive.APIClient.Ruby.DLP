@@ -27,6 +27,9 @@ module CloudmersiveDlpApiClient
     # True if the input text contains street addresses.
     attr_accessor :contains_street_address
 
+    # True if the input text contains standalone city names (e.g. \"San Francisco\") outside of a full street address.
+    attr_accessor :contains_city
+
     # True if the input text contains person names.
     attr_accessor :contains_person_name
 
@@ -90,6 +93,12 @@ module CloudmersiveDlpApiClient
     # True if the input text contains health insurance member IDs.
     attr_accessor :contains_health_insurance_member_id
 
+    # True if the input text contains medical record numbers.
+    attr_accessor :contains_medical_record_number
+
+    # True if the input text contains billing account numbers (provider/customer billing account IDs, distinct from bank account numbers).
+    attr_accessor :contains_billing_account_number
+
     # True if the input text contains references to injuries or diseases.
     attr_accessor :contains_health_injury_or_disease
 
@@ -133,6 +142,7 @@ module CloudmersiveDlpApiClient
         :'contains_email_address' => :'ContainsEmailAddress',
         :'contains_phone_number' => :'ContainsPhoneNumber',
         :'contains_street_address' => :'ContainsStreetAddress',
+        :'contains_city' => :'ContainsCity',
         :'contains_person_name' => :'ContainsPersonName',
         :'contains_birth_date' => :'ContainsBirthDate',
         :'contains_passport_number' => :'ContainsPassportNumber',
@@ -154,6 +164,8 @@ module CloudmersiveDlpApiClient
         :'contains_ip_address' => :'ContainsIpAddress',
         :'contains_mac_address' => :'ContainsMacAddress',
         :'contains_health_insurance_member_id' => :'ContainsHealthInsuranceMemberID',
+        :'contains_medical_record_number' => :'ContainsMedicalRecordNumber',
+        :'contains_billing_account_number' => :'ContainsBillingAccountNumber',
         :'contains_health_injury_or_disease' => :'ContainsHealthInjuryOrDisease',
         :'contains_health_type_of_treatment' => :'ContainsHealthTypeOfTreatment',
         :'contains_health_date_and_time_of_treatment' => :'ContainsHealthDateAndTimeOfTreatment',
@@ -176,6 +188,7 @@ module CloudmersiveDlpApiClient
         :'contains_email_address' => :'BOOLEAN',
         :'contains_phone_number' => :'BOOLEAN',
         :'contains_street_address' => :'BOOLEAN',
+        :'contains_city' => :'BOOLEAN',
         :'contains_person_name' => :'BOOLEAN',
         :'contains_birth_date' => :'BOOLEAN',
         :'contains_passport_number' => :'BOOLEAN',
@@ -197,6 +210,8 @@ module CloudmersiveDlpApiClient
         :'contains_ip_address' => :'BOOLEAN',
         :'contains_mac_address' => :'BOOLEAN',
         :'contains_health_insurance_member_id' => :'BOOLEAN',
+        :'contains_medical_record_number' => :'BOOLEAN',
+        :'contains_billing_account_number' => :'BOOLEAN',
         :'contains_health_injury_or_disease' => :'BOOLEAN',
         :'contains_health_type_of_treatment' => :'BOOLEAN',
         :'contains_health_date_and_time_of_treatment' => :'BOOLEAN',
@@ -234,6 +249,10 @@ module CloudmersiveDlpApiClient
 
       if attributes.has_key?(:'ContainsStreetAddress')
         self.contains_street_address = attributes[:'ContainsStreetAddress']
+      end
+
+      if attributes.has_key?(:'ContainsCity')
+        self.contains_city = attributes[:'ContainsCity']
       end
 
       if attributes.has_key?(:'ContainsPersonName')
@@ -320,6 +339,14 @@ module CloudmersiveDlpApiClient
         self.contains_health_insurance_member_id = attributes[:'ContainsHealthInsuranceMemberID']
       end
 
+      if attributes.has_key?(:'ContainsMedicalRecordNumber')
+        self.contains_medical_record_number = attributes[:'ContainsMedicalRecordNumber']
+      end
+
+      if attributes.has_key?(:'ContainsBillingAccountNumber')
+        self.contains_billing_account_number = attributes[:'ContainsBillingAccountNumber']
+      end
+
       if attributes.has_key?(:'ContainsHealthInjuryOrDisease')
         self.contains_health_injury_or_disease = attributes[:'ContainsHealthInjuryOrDisease']
       end
@@ -391,6 +418,7 @@ module CloudmersiveDlpApiClient
           contains_email_address == o.contains_email_address &&
           contains_phone_number == o.contains_phone_number &&
           contains_street_address == o.contains_street_address &&
+          contains_city == o.contains_city &&
           contains_person_name == o.contains_person_name &&
           contains_birth_date == o.contains_birth_date &&
           contains_passport_number == o.contains_passport_number &&
@@ -412,6 +440,8 @@ module CloudmersiveDlpApiClient
           contains_ip_address == o.contains_ip_address &&
           contains_mac_address == o.contains_mac_address &&
           contains_health_insurance_member_id == o.contains_health_insurance_member_id &&
+          contains_medical_record_number == o.contains_medical_record_number &&
+          contains_billing_account_number == o.contains_billing_account_number &&
           contains_health_injury_or_disease == o.contains_health_injury_or_disease &&
           contains_health_type_of_treatment == o.contains_health_type_of_treatment &&
           contains_health_date_and_time_of_treatment == o.contains_health_date_and_time_of_treatment &&
@@ -435,7 +465,7 @@ module CloudmersiveDlpApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [clean_result, contains_email_address, contains_phone_number, contains_street_address, contains_person_name, contains_birth_date, contains_passport_number, contains_drivers_license, contains_social_security_number, contains_taxpayer_id, contains_credit_card_number, contains_credit_card_expiration_date, contains_credit_card_verification_code, contains_bank_account_number, contains_iban, contains_health_insurance_number, contains_bearer_token, contains_http_cookie, contains_private_keys, contains_credentials, contains_deep_web_urls, contains_source_code, contains_ip_address, contains_mac_address, contains_health_insurance_member_id, contains_health_injury_or_disease, contains_health_type_of_treatment, contains_health_date_and_time_of_treatment, contains_health_plan_beneficiary_number, contains_health_payments_made_for_treatment, contains_faces, contains_vehicle_id, contains_device_id, contains_names_of_relatives, contains_health_universal_record_locator, contains_biometrics, analysis_rationale].hash
+      [clean_result, contains_email_address, contains_phone_number, contains_street_address, contains_city, contains_person_name, contains_birth_date, contains_passport_number, contains_drivers_license, contains_social_security_number, contains_taxpayer_id, contains_credit_card_number, contains_credit_card_expiration_date, contains_credit_card_verification_code, contains_bank_account_number, contains_iban, contains_health_insurance_number, contains_bearer_token, contains_http_cookie, contains_private_keys, contains_credentials, contains_deep_web_urls, contains_source_code, contains_ip_address, contains_mac_address, contains_health_insurance_member_id, contains_medical_record_number, contains_billing_account_number, contains_health_injury_or_disease, contains_health_type_of_treatment, contains_health_date_and_time_of_treatment, contains_health_plan_beneficiary_number, contains_health_payments_made_for_treatment, contains_faces, contains_vehicle_id, contains_device_id, contains_names_of_relatives, contains_health_universal_record_locator, contains_biometrics, analysis_rationale].hash
     end
 
     # Builds the object from hash

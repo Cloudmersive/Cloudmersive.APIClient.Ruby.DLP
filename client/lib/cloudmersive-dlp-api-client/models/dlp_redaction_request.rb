@@ -87,7 +87,7 @@ module CloudmersiveDlpApiClient
     # Set to true to allow MAC addresses in the input text and not redact them.
     attr_accessor :allow_mac_address
 
-    # Redaction mode: \"Delete\" to remove PII entirely, or \"ReplaceWithAsterisk\" to replace PII characters with asterisks (*).
+    # Redaction mode: \"SemanticTag\" (default) replaces PII with a semantic tag in square brackets (e.g. [PHONE-NUMBER]), \"Delete\" removes PII entirely, or \"ReplaceWithAsterisk\" replaces PII characters with asterisks (*).
     attr_accessor :redaction_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.

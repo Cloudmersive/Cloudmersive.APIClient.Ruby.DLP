@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**input_file** | **String** | Document file bytes (PDF, DOCX, PNG, or JPG) to scan for PII and sensitive data. | [optional] 
+**input_file** | **String** | Document file bytes (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, or WEBP) to scan for PII and sensitive data. | [optional] 
 **file_name** | **String** | Optional. Name of the input file including extension, used for format detection. If not provided, format is detected from file contents. | [optional] 
-**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
+**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Normal\&quot;, \&quot;Advanced\&quot;, \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
 **allow_email_address** | **BOOLEAN** | Set to true to allow email addresses in the document and not flag them as PII. | [optional] 
 **allow_phone_number** | **BOOLEAN** | Set to true to allow phone numbers in the document and not flag them as PII. | [optional] 
 **allow_street_address** | **BOOLEAN** | Set to true to allow street addresses in the document and not flag them as PII. | [optional] 

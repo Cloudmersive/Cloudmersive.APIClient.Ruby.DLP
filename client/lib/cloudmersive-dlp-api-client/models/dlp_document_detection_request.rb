@@ -15,13 +15,13 @@ require 'date'
 module CloudmersiveDlpApiClient
   # Request object for DLP document detection with 23 PII detection types.
   class DlpDocumentDetectionRequest
-    # Document file bytes (PDF, DOCX, PNG, or JPG) to scan for PII and sensitive data.
+    # Document file bytes (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, or WEBP) to scan for PII and sensitive data.
     attr_accessor :input_file
 
     # Optional. Name of the input file including extension, used for format detection. If not provided, format is detected from file contents.
     attr_accessor :file_name
 
-    # Optional. Recognition mode for image processing. Options: null (default), \"Fast\", \"FastPlus\", \"FastMini\".
+    # Optional. Recognition mode for image processing. Options: null (default), \"Normal\", \"Advanced\", \"Fast\", \"FastPlus\", \"FastMini\".
     attr_accessor :recognition_mode
 
     # Set to true to allow email addresses in the document and not flag them as PII.

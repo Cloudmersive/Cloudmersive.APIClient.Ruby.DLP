@@ -17,6 +17,12 @@ require 'cloudmersive-dlp-api-client/version'
 require 'cloudmersive-dlp-api-client/configuration'
 
 # Models
+require 'cloudmersive-dlp-api-client/models/audio_timestamp'
+require 'cloudmersive-dlp-api-client/models/custom_pii_field'
+require 'cloudmersive-dlp-api-client/models/dlp_advanced_audio_detection_request'
+require 'cloudmersive-dlp-api-client/models/dlp_advanced_audio_detection_response'
+require 'cloudmersive-dlp-api-client/models/dlp_advanced_audio_redaction_request'
+require 'cloudmersive-dlp-api-client/models/dlp_advanced_audio_redaction_response'
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_detection_request'
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_detection_response'
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_document_detection_request'
@@ -24,6 +30,12 @@ require 'cloudmersive-dlp-api-client/models/dlp_advanced_document_redaction_requ
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_document_redaction_response'
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_redaction_request'
 require 'cloudmersive-dlp-api-client/models/dlp_advanced_redaction_response'
+require 'cloudmersive-dlp-api-client/models/dlp_audio_detection_request'
+require 'cloudmersive-dlp-api-client/models/dlp_audio_detection_response'
+require 'cloudmersive-dlp-api-client/models/dlp_audio_redaction_request'
+require 'cloudmersive-dlp-api-client/models/dlp_audio_redaction_response'
+require 'cloudmersive-dlp-api-client/models/dlp_batch_job_result'
+require 'cloudmersive-dlp-api-client/models/dlp_batch_job_status_result'
 require 'cloudmersive-dlp-api-client/models/dlp_detection_request'
 require 'cloudmersive-dlp-api-client/models/dlp_detection_response'
 require 'cloudmersive-dlp-api-client/models/dlp_document_detection_request'
@@ -31,11 +43,13 @@ require 'cloudmersive-dlp-api-client/models/dlp_document_redaction_request'
 require 'cloudmersive-dlp-api-client/models/dlp_document_redaction_response'
 require 'cloudmersive-dlp-api-client/models/dlp_redaction_request'
 require 'cloudmersive-dlp-api-client/models/dlp_redaction_response'
+require 'cloudmersive-dlp-api-client/models/redacted_audio_segment'
 require 'cloudmersive-dlp-api-client/models/redacted_page_info'
 
 # APIs
 require 'cloudmersive-dlp-api-client/api/detect_api'
 require 'cloudmersive-dlp-api-client/api/redact_api'
+require 'cloudmersive-dlp-api-client/api/tasks_batch_job_api'
 
 module CloudmersiveDlpApiClient
   class << self

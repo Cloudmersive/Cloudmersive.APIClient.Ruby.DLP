@@ -32,9 +32,33 @@ describe 'DetectApi' do
     end
   end
 
+  # unit tests for detect_audio
+  # Detect User Data in Audio File
+  # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 23 configurable types of user data in the transcript using Advanced AI. Returns the full transcript, token timestamps, and detection results.
+  # @param [Hash] opts the optional parameters
+  # @option opts [DlpAudioDetectionRequest] :body Input request
+  # @return [DlpAudioDetectionResponse]
+  describe 'detect_audio test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
+  # unit tests for detect_audio_advanced
+  # Detect User Data in Audio File (Advanced)
+  # Transcribes an audio file (WAV, MP3, M4A, FLAC, OGG, WMA) and detects 29 configurable types of user data including health-related PHI in the transcript using Advanced AI. Returns the full transcript, token timestamps, detection results, and optional rationale.
+  # @param [Hash] opts the optional parameters
+  # @option opts [DlpAdvancedAudioDetectionRequest] :body Input request
+  # @return [DlpAdvancedAudioDetectionResponse]
+  describe 'detect_audio_advanced test' do
+    it 'should work' do
+      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    end
+  end
+
   # unit tests for detect_document
   # Detect User Data in Document Image
-  # Detects configurable types of user data in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+  # Detects configurable types of user data in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
   # @param [Hash] opts the optional parameters
   # @option opts [DlpDocumentDetectionRequest] :body Input request
   # @return [DlpDetectionResponse]
@@ -46,7 +70,7 @@ describe 'DetectApi' do
 
   # unit tests for detect_document_advanced
   # Detect User Data in Document Image (Advanced)
-  # Detects 29 configurable types of user data including health-related PHI in a document image (PDF, DOCX, PNG, JPG) using Advanced AI.
+  # Detects 29 configurable types of user data including health-related PHI in a document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) using Advanced AI.
   # @param [Hash] opts the optional parameters
   # @option opts [DlpAdvancedDocumentDetectionRequest] :body Input request
   # @return [DlpAdvancedDetectionResponse]

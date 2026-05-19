@@ -27,6 +27,9 @@ module CloudmersiveDlpApiClient
     # Set to true to allow street addresses in the input text and not flag them as PII.
     attr_accessor :allow_street_address
 
+    # Set to true to allow standalone city names (e.g. \"San Francisco\") in the input text and not flag them as PII. Applies to city names mentioned outside of a full street address.
+    attr_accessor :allow_city
+
     # Set to true to allow person names in the input text and not flag them as PII.
     attr_accessor :allow_person_name
 
@@ -90,6 +93,12 @@ module CloudmersiveDlpApiClient
     # Set to true to allow health insurance member IDs in the input text and not flag them as PHI.
     attr_accessor :allow_health_insurance_member_id
 
+    # Set to true to allow medical record numbers in the input text and not flag them as PHI.
+    attr_accessor :allow_medical_record_number
+
+    # Set to true to allow billing account numbers (e.g. provider/customer billing account IDs, distinct from bank account numbers) in the input text and not flag them as PII.
+    attr_accessor :allow_billing_account_number
+
     # Set to true to allow references to injuries or diseases in the input text and not flag them as PHI.
     attr_accessor :allow_health_injury_or_disease
 
@@ -123,6 +132,9 @@ module CloudmersiveDlpApiClient
     # Set to true to include a natural language rationale explaining why each detection conclusion was formed.
     attr_accessor :provide_analysis_rationale
 
+    # Apply a Custom Policy for DLP Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud
+    attr_accessor :custom_policy_id
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -130,6 +142,7 @@ module CloudmersiveDlpApiClient
         :'allow_email_address' => :'AllowEmailAddress',
         :'allow_phone_number' => :'AllowPhoneNumber',
         :'allow_street_address' => :'AllowStreetAddress',
+        :'allow_city' => :'AllowCity',
         :'allow_person_name' => :'AllowPersonName',
         :'allow_birth_date' => :'AllowBirthDate',
         :'allow_passport_number' => :'AllowPassportNumber',
@@ -151,6 +164,8 @@ module CloudmersiveDlpApiClient
         :'allow_ip_address' => :'AllowIpAddress',
         :'allow_mac_address' => :'AllowMacAddress',
         :'allow_health_insurance_member_id' => :'AllowHealthInsuranceMemberID',
+        :'allow_medical_record_number' => :'AllowMedicalRecordNumber',
+        :'allow_billing_account_number' => :'AllowBillingAccountNumber',
         :'allow_health_injury_or_disease' => :'AllowHealthInjuryOrDisease',
         :'allow_health_type_of_treatment' => :'AllowHealthTypeOfTreatment',
         :'allow_health_date_and_time_of_treatment' => :'AllowHealthDateAndTimeOfTreatment',
@@ -161,7 +176,8 @@ module CloudmersiveDlpApiClient
         :'allow_names_of_relatives' => :'AllowNamesOfRelatives',
         :'allow_health_universal_record_locator' => :'AllowHealthUniversalRecordLocator',
         :'allow_biometrics' => :'AllowBiometrics',
-        :'provide_analysis_rationale' => :'ProvideAnalysisRationale'
+        :'provide_analysis_rationale' => :'ProvideAnalysisRationale',
+        :'custom_policy_id' => :'CustomPolicyID'
       }
     end
 
@@ -172,6 +188,7 @@ module CloudmersiveDlpApiClient
         :'allow_email_address' => :'BOOLEAN',
         :'allow_phone_number' => :'BOOLEAN',
         :'allow_street_address' => :'BOOLEAN',
+        :'allow_city' => :'BOOLEAN',
         :'allow_person_name' => :'BOOLEAN',
         :'allow_birth_date' => :'BOOLEAN',
         :'allow_passport_number' => :'BOOLEAN',
@@ -193,6 +210,8 @@ module CloudmersiveDlpApiClient
         :'allow_ip_address' => :'BOOLEAN',
         :'allow_mac_address' => :'BOOLEAN',
         :'allow_health_insurance_member_id' => :'BOOLEAN',
+        :'allow_medical_record_number' => :'BOOLEAN',
+        :'allow_billing_account_number' => :'BOOLEAN',
         :'allow_health_injury_or_disease' => :'BOOLEAN',
         :'allow_health_type_of_treatment' => :'BOOLEAN',
         :'allow_health_date_and_time_of_treatment' => :'BOOLEAN',
@@ -203,7 +222,8 @@ module CloudmersiveDlpApiClient
         :'allow_names_of_relatives' => :'BOOLEAN',
         :'allow_health_universal_record_locator' => :'BOOLEAN',
         :'allow_biometrics' => :'BOOLEAN',
-        :'provide_analysis_rationale' => :'BOOLEAN'
+        :'provide_analysis_rationale' => :'BOOLEAN',
+        :'custom_policy_id' => :'String'
       }
     end
 
@@ -229,6 +249,10 @@ module CloudmersiveDlpApiClient
 
       if attributes.has_key?(:'AllowStreetAddress')
         self.allow_street_address = attributes[:'AllowStreetAddress']
+      end
+
+      if attributes.has_key?(:'AllowCity')
+        self.allow_city = attributes[:'AllowCity']
       end
 
       if attributes.has_key?(:'AllowPersonName')
@@ -315,6 +339,14 @@ module CloudmersiveDlpApiClient
         self.allow_health_insurance_member_id = attributes[:'AllowHealthInsuranceMemberID']
       end
 
+      if attributes.has_key?(:'AllowMedicalRecordNumber')
+        self.allow_medical_record_number = attributes[:'AllowMedicalRecordNumber']
+      end
+
+      if attributes.has_key?(:'AllowBillingAccountNumber')
+        self.allow_billing_account_number = attributes[:'AllowBillingAccountNumber']
+      end
+
       if attributes.has_key?(:'AllowHealthInjuryOrDisease')
         self.allow_health_injury_or_disease = attributes[:'AllowHealthInjuryOrDisease']
       end
@@ -358,6 +390,10 @@ module CloudmersiveDlpApiClient
       if attributes.has_key?(:'ProvideAnalysisRationale')
         self.provide_analysis_rationale = attributes[:'ProvideAnalysisRationale']
       end
+
+      if attributes.has_key?(:'CustomPolicyID')
+        self.custom_policy_id = attributes[:'CustomPolicyID']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -382,6 +418,7 @@ module CloudmersiveDlpApiClient
           allow_email_address == o.allow_email_address &&
           allow_phone_number == o.allow_phone_number &&
           allow_street_address == o.allow_street_address &&
+          allow_city == o.allow_city &&
           allow_person_name == o.allow_person_name &&
           allow_birth_date == o.allow_birth_date &&
           allow_passport_number == o.allow_passport_number &&
@@ -403,6 +440,8 @@ module CloudmersiveDlpApiClient
           allow_ip_address == o.allow_ip_address &&
           allow_mac_address == o.allow_mac_address &&
           allow_health_insurance_member_id == o.allow_health_insurance_member_id &&
+          allow_medical_record_number == o.allow_medical_record_number &&
+          allow_billing_account_number == o.allow_billing_account_number &&
           allow_health_injury_or_disease == o.allow_health_injury_or_disease &&
           allow_health_type_of_treatment == o.allow_health_type_of_treatment &&
           allow_health_date_and_time_of_treatment == o.allow_health_date_and_time_of_treatment &&
@@ -413,7 +452,8 @@ module CloudmersiveDlpApiClient
           allow_names_of_relatives == o.allow_names_of_relatives &&
           allow_health_universal_record_locator == o.allow_health_universal_record_locator &&
           allow_biometrics == o.allow_biometrics &&
-          provide_analysis_rationale == o.provide_analysis_rationale
+          provide_analysis_rationale == o.provide_analysis_rationale &&
+          custom_policy_id == o.custom_policy_id
     end
 
     # @see the `==` method
@@ -425,7 +465,7 @@ module CloudmersiveDlpApiClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [input_text, allow_email_address, allow_phone_number, allow_street_address, allow_person_name, allow_birth_date, allow_passport_number, allow_drivers_license, allow_social_security_number, allow_taxpayer_id, allow_credit_card_number, allow_credit_card_expiration_date, allow_credit_card_verification_code, allow_bank_account_number, allow_iban, allow_health_insurance_number, allow_bearer_token, allow_http_cookie, allow_private_keys, allow_credentials, allow_deep_web_urls, allow_source_code, allow_ip_address, allow_mac_address, allow_health_insurance_member_id, allow_health_injury_or_disease, allow_health_type_of_treatment, allow_health_date_and_time_of_treatment, allow_health_plan_beneficiary_number, allow_health_payments_made_for_treatment, allow_vehicle_id, allow_device_id, allow_names_of_relatives, allow_health_universal_record_locator, allow_biometrics, provide_analysis_rationale].hash
+      [input_text, allow_email_address, allow_phone_number, allow_street_address, allow_city, allow_person_name, allow_birth_date, allow_passport_number, allow_drivers_license, allow_social_security_number, allow_taxpayer_id, allow_credit_card_number, allow_credit_card_expiration_date, allow_credit_card_verification_code, allow_bank_account_number, allow_iban, allow_health_insurance_number, allow_bearer_token, allow_http_cookie, allow_private_keys, allow_credentials, allow_deep_web_urls, allow_source_code, allow_ip_address, allow_mac_address, allow_health_insurance_member_id, allow_medical_record_number, allow_billing_account_number, allow_health_injury_or_disease, allow_health_type_of_treatment, allow_health_date_and_time_of_treatment, allow_health_plan_beneficiary_number, allow_health_payments_made_for_treatment, allow_vehicle_id, allow_device_id, allow_names_of_relatives, allow_health_universal_record_locator, allow_biometrics, provide_analysis_rationale, custom_policy_id].hash
     end
 
     # Builds the object from hash

@@ -3,12 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**input_file** | **String** | Document file bytes (PDF, DOCX, PNG, or JPG) to scan for PII and sensitive data. | [optional] 
+**input_file** | **String** | Document file bytes (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, or WEBP) to scan for PII and sensitive data. | [optional] 
 **file_name** | **String** | Optional. Name of the input file including extension, used for format detection. If not provided, format is detected from file contents. | [optional] 
-**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
+**recognition_mode** | **String** | Optional. Recognition mode for image processing. Options: null (default), \&quot;Normal\&quot;, \&quot;Advanced\&quot;, \&quot;Fast\&quot;, \&quot;FastPlus\&quot;, \&quot;FastMini\&quot;. | [optional] 
 **allow_email_address** | **BOOLEAN** | Set to true to allow email addresses in the document and not flag them as PII. | [optional] 
 **allow_phone_number** | **BOOLEAN** | Set to true to allow phone numbers in the document and not flag them as PII. | [optional] 
 **allow_street_address** | **BOOLEAN** | Set to true to allow street addresses in the document and not flag them as PII. | [optional] 
+**allow_city** | **BOOLEAN** | Set to true to allow standalone city names (e.g. \&quot;San Francisco\&quot;) in the document and not flag them as PII. Applies to city names mentioned outside of a full street address. | [optional] 
 **allow_person_name** | **BOOLEAN** | Set to true to allow person names in the document and not flag them as PII. | [optional] 
 **allow_birth_date** | **BOOLEAN** | Set to true to allow birth dates in the document and not flag them as PII. | [optional] 
 **allow_passport_number** | **BOOLEAN** | Set to true to allow passport numbers in the document and not flag them as PII. | [optional] 
@@ -30,6 +31,8 @@ Name | Type | Description | Notes
 **allow_ip_address** | **BOOLEAN** | Set to true to allow IP addresses in the document and not flag them as PII. | [optional] 
 **allow_mac_address** | **BOOLEAN** | Set to true to allow MAC addresses in the document and not flag them as PII. | [optional] 
 **allow_health_insurance_member_id** | **BOOLEAN** | Set to true to allow health insurance member IDs in the document and not flag them as PHI. | [optional] 
+**allow_medical_record_number** | **BOOLEAN** | Set to true to allow medical record numbers in the document and not flag them as PHI. | [optional] 
+**allow_billing_account_number** | **BOOLEAN** | Set to true to allow billing account numbers (e.g. provider/customer billing account IDs, distinct from bank account numbers) in the document and not flag them as PII. | [optional] 
 **allow_health_injury_or_disease** | **BOOLEAN** | Set to true to allow references to injuries or diseases in the document and not flag them as PHI. | [optional] 
 **allow_health_type_of_treatment** | **BOOLEAN** | Set to true to allow references to types of medical treatment in the document and not flag them as PHI. | [optional] 
 **allow_health_date_and_time_of_treatment** | **BOOLEAN** | Set to true to allow dates and times of medical treatment in the document and not flag them as PHI. | [optional] 
@@ -42,5 +45,6 @@ Name | Type | Description | Notes
 **allow_health_universal_record_locator** | **BOOLEAN** | Set to true to allow health universal record locators (URLs) in the document and not flag them as PHI. | [optional] 
 **allow_biometrics** | **BOOLEAN** | Set to true to allow biometric data references (e.g. fingerprints, retinal scans, voiceprints) in the document and not flag them as PII. | [optional] 
 **provide_analysis_rationale** | **BOOLEAN** | Set to true to include a natural language rationale explaining why each detection conclusion was formed. | [optional] 
+**custom_policy_id** | **String** | Apply a Custom Policy for DLP Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud | [optional] 
 
 
